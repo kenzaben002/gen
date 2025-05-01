@@ -1,0 +1,39 @@
+## genesis
+Exploring and testing GENSIS IA to gain a deeper understanding of its capabilities in robotics simulation and reinforcement learning
+-----
+J'ai testé l'installation sur Linux et Windows.
+- Linux fonctionne bien
+- Windows fonctionne mais pose problème de visualisation (OpenGL), donc Linux est fortement recommandé
+Pré-requis :
+- Installer torch
+    # Assurez-vous d'installer la version de Python et de torch adaptée à votre système
+    pip install torch
+- Installer Genesis
+    pip install genesis-world
+##Pour une meilleure compréhension, veuillez vous référer à la documentation officielle :
+https://genesis-world.readthedocs.io/en/latest/user_guide
+
+Genesis est plus efficace avec une carte GPU.
+- Vérifiez vos drivers NVIDIA avec la commande :
+    nvidia-smi
+- Si le driver n’est pas trouvé, installez-le :
+    sudo apt install nvidia-driver --version
+- Verifier vos cuda version
+  
+Vérifiez aussi l’architecture de votre GPU :
+- Elle doit avoir un Compute Capability  (C.C) supérieur ou égal à 3.7
+- Certaines architectures ne sont plus supportées par PyTorch
+  Exemple : la NVIDIA GeForce GTX 780 a un C.C de 3.5 et n’est donc **non compatible**
+
+#######Environnement de mon système
+ **Python** : 3.12.3  
+ **OS** : Ubuntu 24.04.2 LTS   
+ **CPU** : Intel(R) Core(TM) i9-10900K CPU @ 3.70 GHz 
+ **GPU** : NVIDIA GeForce RTX 3060  
+  **Driver** : 550.120  
+  **CUDA** : 12.4  
+ **PyTorch** : 2.7.0+cu118  
+
+
+### rl training du go2
+Lors de l’entraînement d’une politique de marche sur le Unitree Go2, Genesis a mis environ 3600 s (≈ 1 h) en exécution CPU (Intel i9-10900K), contre seulement 88,5 s en exécution GPU (RTX 3060) – soit un gain de temps d’un facteur ~40× grâce à l’accélération GPU.
