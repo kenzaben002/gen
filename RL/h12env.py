@@ -58,7 +58,7 @@ class H1_2Env:
         self.inv_base_init_quat = inv_quat(self.base_init_quat)
         self.robot = self.scene.add_entity(
             gs.morphs.MJCF(
-                file='/home/kbenhammaa/Téléchargements/unitree_ros-master/robots/h1_2_description/h1_2_handless.xml',  
+                file='/home/kbenhammaa/gen/RL/h1_2_handless.xml',  
                 pos=self.base_init_pos.cpu().numpy(),
                 quat=self.base_init_quat.cpu().numpy(),
             ),
