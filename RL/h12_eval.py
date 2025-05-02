@@ -23,7 +23,7 @@ from h12env import H1_2Env
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("-e", "--exp_name", type=str, default="go2-walking")
+    parser.add_argument("-e", "--exp_name", type=str, default="h12-walking")
     parser.add_argument("--ckpt", type=int, default=100)
     args = parser.parse_args()
 
@@ -59,5 +59,5 @@ if __name__ == "__main__":
 
 """
 # evaluation
-python h12_eval.py -e go2-walking -v --ckpt 100
+python h12_eval.py -e h12-walking -v --ckpt 100
 """
