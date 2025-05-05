@@ -75,7 +75,7 @@ class H1_2Env:
         print("Setting PD control parameters...")
         self.robot.set_dofs_kp([self.env_cfg["kp"]] * self.num_actions, self.motors_dof_idx)
         self.robot.set_dofs_kv([self.env_cfg["kd"]] * self.num_actions, self.motors_dof_idx)
-        # les memes gains appliauer a tt les joints 
+        # les memes gains appliquer a tt les joints 
 
         # prepare reward functions and multiply reward scales by dt
         print("Preparing reward functions...")
