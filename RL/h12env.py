@@ -267,19 +267,19 @@ class H1_2Env:
 
     def _reward_lin_vel_z(self):
         # Penalize z axis base linear velocity
-        return 0.1*torch.square(self.base_lin_vel[:, 2])
+        return torch.square(self.base_lin_vel[:, 2])
 
     def _reward_action_rate(self):
         # Penalize changes in actions
-        return 0.001*torch.sum(torch.square(self.last_actions - self.actions), dim=1)
+        return torch.sum(torch.square(self.last_actions - self.actions), dim=1)
 
     def _reward_similar_to_default(self):
         # Penalize joint poses far away from default pose
-        return 0.00001*torch.sum(torch.abs(self.dof_pos - self.default_dof_pos), dim=1)
+        return torch.sum(torch.abs(self.dof_pos - self.default_dof_pos), dim=1)
 
     def _reward_base_height(self):
         # Penalize base height away from target
-        return 0.1*torch.square(self.base_pos[:, 2] - self.reward_cfg["base_height_target"])
+        return torch.square(self.base_pos[:, 2] - self.reward_cfg["base_height_target"])
 
     def _reward_forward_progress(self):
         #Avancer dans la direction souhaitée
@@ -293,7 +293,15 @@ class H1_2Env:
     def _reward_energy_penalty(self):
         #éviter les mouvements inutiles
         return -torch.sum(torch.square(self.dof_vel), dim=1)
-
-
     
+    def _reward_no_jump(self):
+        # Penalise les hauteurs trop grandes (plus que 1.1 m par exemple)
+        penalty = torch.clamp(self.base_pos[:, 2] - 1.05, min=0.0)
+        return -penalty
+
+    def _reward_stable_height(self):
+        target_height = 1.04  # à ajuster selon ton robot
+        height_error = torch.abs(self.base_pos[:, 2] - target_height)
+        return torch.exp(-height_error**2 / 0.01)
+
     
