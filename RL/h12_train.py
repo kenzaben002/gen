@@ -216,6 +216,14 @@ def get_cfgs():
 	    "no_jump": 5.0,
             "stable_height": 1.0,
             "forward_walk": 2.0,
+	    "tracking_velocity": 1.0,
+	    "upright_orientation": -1.0,
+	    "dof_vel":-0.001,
+	    "dof_acc":-1e-6,
+ 	    "action_smoothness":-0.01,
+	    "contact":0.2,
+	    "feet_clearance":-10.0,
+	    "contact_no_vel":-0.1,
 
 	    
         },
