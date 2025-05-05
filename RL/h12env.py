@@ -338,7 +338,7 @@ class H1_2Env:
         # Encourage les contacts au bon moment (phase stance)
         res = torch.zeros(self.num_envs, dtype=torch.float, device=self.device)
         for i in range(self.feet_num):
-            is_stance = self.leg_phase[:, i] < 0.55
+            #is_stance = self.leg_phase[:, i] < 0.55
             contact = self.contact_forces[:, self.feet_indices[i], 2] > 1
             res += ~(contact ^ is_stance)
         return res
