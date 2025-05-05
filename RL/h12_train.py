@@ -74,15 +74,15 @@ def get_cfgs():
         "default_joint_angles": {  # [rad]
             'left_hip_yaw_joint': 0,
             'left_hip_roll_joint': 0,
-            'left_hip_pitch_joint': -0.16,
-            'left_knee_joint': 0.36,
-            'left_ankle_pitch_joint': -0.2,
+            'left_hip_pitch_joint': -0.3,
+            'left_knee_joint': 0.6,
+            'left_ankle_pitch_joint': -0.3,
             'left_ankle_roll_joint': 0.0,
             'right_hip_yaw_joint': 0,
             'right_hip_roll_joint': 0,
-            'right_hip_pitch_joint': -0.16,
-            'right_knee_joint': 0.36,
-            'right_ankle_pitch_joint': -0.2,
+            'right_hip_pitch_joint': -0.3,
+            'right_knee_joint': 0.6,
+            'right_ankle_pitch_joint': -0.3,
             'right_ankle_roll_joint': 0.0,
             'torso_joint': 0,
             'left_shoulder_pitch_joint': 0.4,
@@ -204,20 +204,20 @@ def get_cfgs():
         "base_height_target": 1.04,
         "feet_height_target": 0.0,
         "reward_scales": {
-            "tracking_lin_vel": 10.0,
+            "tracking_lin_vel": 15.0,
             "tracking_ang_vel": 0.5,
-            "lin_vel_z": -2,
-            "base_height": -10.0,
-            "action_rate": -0.001,
+            "lin_vel_z": -1.0,
+            "base_height": -5.0,
+            "action_rate": -0.002,
             "similar_to_default": -0.0,
 	    
         },
     }
     command_cfg = {
         "num_commands": 3,
-        "lin_vel_x_range": [0.2, 1.0],
-        "lin_vel_y_range": [-0.2, 0.2],
-        "ang_vel_range": [-0.5, 0.5],
+        "lin_vel_x_range": [0.3, 0.5],
+        "lin_vel_y_range": [-0.1, 0.1],
+        "ang_vel_range": [-0.2, 0.2],
     }
 
     return env_cfg, obs_cfg, reward_cfg, command_cfg
