@@ -281,4 +281,19 @@ class H1_2Env:
         # Penalize base height away from target
         return 0.1*torch.square(self.base_pos[:, 2] - self.reward_cfg["base_height_target"])
 
+    def _reward_forward_progress(self):
+        #Avancer dans la direction souhaitée
+        forward_velocity = self.base_lin_vel[:, 0]
+        return torch.clip(forward_velocity, 0.0, 1.0)
+
+    def _reward_alive(self):
+        #Récompense constante pour rester debout
+        return torch.ones(self.num_envs, device=gs.device)
+        
+    def _reward_energy_penalty(self):
+        #éviter les mouvements inutiles
+        return -torch.sum(torch.square(self.dof_vel), dim=1)
+
+
+    
     
