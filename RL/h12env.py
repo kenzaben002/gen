@@ -29,6 +29,9 @@ class H1_2Env:
 
         self.obs_scales = obs_cfg["obs_scales"]
         self.reward_scales = reward_cfg["reward_scales"]
+        #ajout de links des pieds 
+        self.feet_names = ["left_ankle_roll_link", "right_ankle_roll_link"]
+        self.feet_num = len(self.feet_names)
 
         # creation dù scene
         self.scene = gs.Scene(
