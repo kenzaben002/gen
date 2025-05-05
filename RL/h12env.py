@@ -269,6 +269,11 @@ class H1_2Env:
         # Penalize z axis base linear velocity
         return torch.square(self.base_lin_vel[:, 2])
 
+    def _reward_forward_walk(self):
+        forward_vel = self.base_lin_vel[:, 0]  # vitesse en x
+        return forward_vel  # ou `torch.clamp(forward_vel, min=0.0)`
+
+
     def _reward_action_rate(self):
         # Penalize changes in actions
         return torch.sum(torch.square(self.last_actions - self.actions), dim=1)
@@ -297,11 +302,14 @@ class H1_2Env:
     def _reward_no_jump(self):
         # Penalise les hauteurs trop grandes (plus que 1.1 m par exemple)
         penalty = torch.clamp(self.base_pos[:, 2] - 1.05, min=0.0)
-        return -penalty
+        return -5.0*penalty
 
     def _reward_stable_height(self):
         target_height = 1.04  # à ajuster selon ton robot
         height_error = torch.abs(self.base_pos[:, 2] - target_height)
         return torch.exp(-height_error**2 / 0.01)
 
-    
+    def _reward_foot_contact(self):
+        # Supposons que self.feet_contact est un booléen (num_envs x 4)
+        return torch.sum(self.feet_contact.float(), dim=1) / 4.0  # moyenne des contacts
+
