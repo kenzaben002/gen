@@ -186,7 +186,7 @@ def get_cfgs():
         "base_init_quat": [1.0, 0.0, 0.0, 0.0],
         "episode_length_s": 20.0,
         "resampling_time_s": 4.0,
-        "action_scale": 0.25,
+        "action_scale": 0.5,
         "simulate_action_latency": True,
         "clip_actions": 100.0,
     }
@@ -204,19 +204,21 @@ def get_cfgs():
         "base_height_target": 1.04,
         "feet_height_target": 0.0,
         "reward_scales": {
-            "tracking_lin_vel": 1.0,
+            "tracking_lin_vel": 10.0,
             "tracking_ang_vel": 0.5,
-            "lin_vel_z": -50,
-            "base_height": -50.0,
-            "action_rate": -0.01,
+            "lin_vel_z": -2,
+            "base_height": -10.0,
+            "action_rate": -0.001,
             "similar_to_default": -0.0,
+	    "feet_air_time":1.0,
+	    "foot_slip" :-0.1 ,
         },
     }
     command_cfg = {
         "num_commands": 3,
-        "lin_vel_x_range": [0.5, 0.5],
-        "lin_vel_y_range": [0.0, 0.0],
-        "ang_vel_range": [0.0, 0.0],
+        "lin_vel_x_range": [0.2, 1.0],
+        "lin_vel_y_range": [-0.2, 0.2],
+        "ang_vel_range": [-0.5, 0.5],
     }
 
     return env_cfg, obs_cfg, reward_cfg, command_cfg
