@@ -213,7 +213,7 @@ def get_cfgs():
 	    "forward_progress": 1.0,
             "alive": 0.1,
             "energy_penalty": 0.01,
-}
+
 	    
         },
     }
