@@ -70,7 +70,7 @@ def get_train_cfg(exp_name, max_iterations):
 def get_cfgs():
     env_cfg = {
         "num_actions": 21,
-        # joint/link names
+        # joint/link names / tt changement done une erreur de log
         "default_joint_angles": {  # [rad]
             'left_hip_yaw_joint': 0,
             'left_hip_roll_joint': 0,
