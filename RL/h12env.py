@@ -309,7 +309,5 @@ class H1_2Env:
         height_error = torch.abs(self.base_pos[:, 2] - target_height)
         return torch.exp(-height_error**2 / 0.01)
 
-    def _reward_foot_contact(self):
-        # Supposons que self.feet_contact est un booléen (num_envs x 4)
-        return torch.sum(self.feet_contact.float(), dim=1) / 4.0  # moyenne des contacts
+   
 
