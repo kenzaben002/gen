@@ -215,7 +215,6 @@ def get_cfgs():
             "energy_penalty": 0.01,
 	    "no_jump": 5.0,
             "stable_height": 1.0,
-	    "foot_contact": 1.0,
             "forward_walk": 2.0,
 
 	    
