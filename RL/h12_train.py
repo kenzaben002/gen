@@ -206,7 +206,7 @@ def get_cfgs():
         "reward_scales": {
             "tracking_lin_vel": 15.0,
             "tracking_ang_vel": 0.5,
-            "lin_vel_z": -1.0,
+            "lin_vel_z": -2.0,
             "base_height": -5.0,
             "action_rate": -0.002,
             "similar_to_default": -0.0,
@@ -215,7 +215,6 @@ def get_cfgs():
             "energy_penalty": 0.01,
 	    "no_jump": 5.0,
             "stable_height": 1.0,
-	    "no_vertical_velocity": 2.0,
 	    "foot_contact": 1.0,
             "forward_walk": 2.0,
 
