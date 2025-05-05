@@ -267,16 +267,18 @@ class H1_2Env:
 
     def _reward_lin_vel_z(self):
         # Penalize z axis base linear velocity
-        return torch.square(self.base_lin_vel[:, 2])
+        return 0.1*torch.square(self.base_lin_vel[:, 2])
 
     def _reward_action_rate(self):
         # Penalize changes in actions
-        return torch.sum(torch.square(self.last_actions - self.actions), dim=1)
+        return 0.001*torch.sum(torch.square(self.last_actions - self.actions), dim=1)
 
     def _reward_similar_to_default(self):
         # Penalize joint poses far away from default pose
-        return torch.sum(torch.abs(self.dof_pos - self.default_dof_pos), dim=1)
+        return 0.00001*torch.sum(torch.abs(self.dof_pos - self.default_dof_pos), dim=1)
 
     def _reward_base_height(self):
         # Penalize base height away from target
-        return torch.square(self.base_pos[:, 2] - self.reward_cfg["base_height_target"])
+        return 0.1*torch.square(self.base_pos[:, 2] - self.reward_cfg["base_height_target"])
+
+    
