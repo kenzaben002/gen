@@ -205,10 +205,10 @@ def get_cfgs():
         "feet_height_target": 0.0,
         "reward_scales": {
             "tracking_lin_vel": 1.0,
-            "tracking_ang_vel": 0.2,
-            "lin_vel_z": -10,
+            "tracking_ang_vel": 0.5,
+            "lin_vel_z": -50,
             "base_height": -50.0,
-            "action_rate": -0.005,
+            "action_rate": -0.01,
             "similar_to_default": -0.0,
         },
     }
