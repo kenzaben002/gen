@@ -124,7 +124,7 @@ def get_cfgs():
 	
         ],
         # PD
-        "kp":{
+        "joint_kps":{
         	'left_hip_yaw_joint': 200.,
         	'left_hip_roll_joint': 200.,
         	'left_hip_pitch_joint': 200.,
@@ -151,7 +151,7 @@ def get_cfgs():
         	'right_shoulder_yaw_joint': 60.,
         	'right_elbow_joint': 120.,},
         
-        "kd": {
+        "joint_kds": {
 	    	'left_hip_yaw_joint': 2.5,
         	'left_hip_roll_joint': 2.5,
         	'left_hip_pitch_joint': 2.5,
