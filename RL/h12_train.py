@@ -210,6 +210,10 @@ def get_cfgs():
             "base_height": -5.0,
             "action_rate": -0.002,
             "similar_to_default": -0.0,
+	    "forward_progress": 1.0,
+            "alive": 0.1,
+            "energy_penalty": 0.01,
+}
 	    
         },
     }
