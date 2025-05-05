@@ -124,8 +124,60 @@ def get_cfgs():
 	
         ],
         # PD
-        "kp": 300.0,
-        "kd": 1.5,
+        "kp": {
+        	'left_hip_yaw_joint': 200.,
+        	'left_hip_roll_joint': 200.,
+        	'left_hip_pitch_joint': 200.,
+        	'left_knee_joint': 300.,
+        	'left_ankle_pitch_joint': 40.,
+        	'left_ankle_roll_joint': 40.,
+
+        	'right_hip_yaw_joint': 200.,
+        	'right_hip_roll_joint': 200.,
+        	'right_hip_pitch_joint': 200.,
+        	'right_knee_joint': 300.,
+        	'right_ankle_pitch_joint': 40.,
+        	'right_ankle_roll_joint': 40.,
+
+       		'torso_joint': 100.,
+
+        	'left_shoulder_pitch_joint': 100.,
+        	'left_shoulder_roll_joint': 80.,
+        	'left_shoulder_yaw_joint': 60.,
+        	'left_elbow_joint': 120.,
+
+        	'right_shoulder_pitch_joint': 100.,
+        	'right_shoulder_roll_joint': 80.,
+        	'right_shoulder_yaw_joint': 60.,
+        	'right_elbow_joint': 120.,}
+        
+        "kd": {
+	    	'left_hip_yaw_joint': 2.5,
+        	'left_hip_roll_joint': 2.5,
+        	'left_hip_pitch_joint': 2.5,
+        	'left_knee_joint': 4,
+        	'left_ankle_pitch_joint': 2.0,
+        	'left_ankle_roll_joint': 2.0,
+
+        	'right_hip_yaw_joint': 2.5,
+        	'right_hip_roll_joint': 2.5,
+        	'right_hip_pitch_joint': 2.5,
+        	'right_knee_joint': 4,
+        	'right_ankle_pitch_joint': 2.0,
+        	'right_ankle_roll_joint': 2.0,
+
+        	'torso_joint': 10.,
+
+        	'left_shoulder_pitch_joint': 2.0,
+        	'left_shoulder_roll_joint': 1.5,
+        	'left_shoulder_yaw_joint': 1.0,
+        	'left_elbow_joint': 3.0,
+
+        	'right_shoulder_pitch_joint': 2.0,
+        	'right_shoulder_roll_joint': 1.5,
+        	'right_shoulder_yaw_joint': 1.0,
+        	'right_elbow_joint': 3.0,
+   		 },
         # termination
         "termination_if_roll_greater_than": 10,  # degree
         "termination_if_pitch_greater_than": 10,
