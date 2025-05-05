@@ -319,9 +319,6 @@ def _reward_upright_orientation(self):
     upright = torch.square(1.0 - self.projected_gravity[:, 2])
     return -upright  # pénalité si la gravité projetée s’éloigne de Z+
 
-def _reward_alive(self):
-    # Récompense constante tant que l’agent reste debout
-    return torch.ones(self.num_envs, device=self.device)
 
 def _reward_dof_vel(self):
     # Pénalise les vitesses articulaires excessives
