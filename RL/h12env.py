@@ -160,7 +160,7 @@ class H1_2Env:
         self.dof_pos[:] = self.robot.get_dofs_position(self.motors_dof_idx)
         self.dof_vel[:] = self.robot.get_dofs_velocity(self.motors_dof_idx)
         #### ajout 
-        self.contact_forces = self.gym.get_contact_forces(self.scene)
+      
         # resample commands / changement des cmd pour certains env
         envs_idx = (
             (self.episode_length_buf % int(self.env_cfg["resampling_time_s"] / self.dt) == 0)
