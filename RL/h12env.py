@@ -73,8 +73,17 @@ class H1_2Env:
 
         # PD control parameters
         print("Setting PD control parameters...")
-        self.robot.set_dofs_kp([self.env_cfg["kp"]] * self.num_actions, self.motors_dof_idx)
-        self.robot.set_dofs_kv([self.env_cfg["kd"]] * self.num_actions, self.motors_dof_idx)
+        # Obtention des gains spécifiques à chaque joint
+        joint_names = self.env_cfg["joint_names"]
+        joint_kps = [self.env_cfg["joint_kps"][name] for name in joint_names]
+        joint_kds = [self.env_cfg["joint_kds"][name] for name in joint_names]
+
+        # Application des gains à chaque joint
+        self.robot.set_dofs_kp(joint_kps, self.motors_dof_idx)
+        self.robot.set_dofs_kv(joint_kds, self.motors_dof_idx)
+
+        #self.robot.set_dofs_kp([self.env_cfg["kp"]] * self.num_actions, self.motors_dof_idx)
+        #self.robot.set_dofs_kv([self.env_cfg["kd"]] * self.num_actions, self.motors_dof_idx)
         # les memes gains appliquer a tt les joints 
 
         # prepare reward functions and multiply reward scales by dt
