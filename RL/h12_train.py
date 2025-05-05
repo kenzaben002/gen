@@ -213,7 +213,8 @@ def get_cfgs():
 	    "forward_progress": 1.0,
             "alive": 0.1,
             "energy_penalty": 0.01,
-
+	    "no_jump": 2.0,
+            "stable_height": 1.0
 	    
         },
     }
