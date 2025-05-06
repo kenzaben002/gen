@@ -272,11 +272,7 @@ class H1_2Env:
 
     def _reward_lin_vel_z(self):
         # Penalize z axis base linear velocity
-        return torch.square(self.base_lin_vel[:, 2])
-
-    #def _reward_forward_walk(self):
-     #   forward_vel = self.base_lin_vel[:, 0]  # vitesse en x
-     #   return forward_vel  # ou `torch.clamp(forward_vel, min=0.0)`
+        return -torch.square(self.base_lin_vel[:, 2])
 
 
     def _reward_action_rate(self):
@@ -297,8 +293,9 @@ class H1_2Env:
         return torch.clip(forward_velocity, 0.0, 1.0)
 
     def _reward_alive(self):
-        #Récompense constante pour rester debout
-        return torch.ones(self.num_envs, device=gs.device)
+        alive = (self.base_pos[:, 2] > 1.0).float()
+        return alive
+
         
     def _reward_energy_penalty(self):
         #éviter les mouvements inutiles
@@ -310,9 +307,9 @@ class H1_2Env:
         return -5.0*penalty
 
     def _reward_stable_height(self):
-        target_height = 1.04  # à ajuster selon ton robot
+        target_height = 1.04 
         height_error = torch.abs(self.base_pos[:, 2] - target_height)
-        return torch.exp(-height_error**2 / 0.01)
+        return torch.exp(-height_error/ 0.0025)
         
     def _reward_tracking_velocity(self):
         # Récompense pour suivre la commande en XY (ignorer Z)
@@ -320,9 +317,8 @@ class H1_2Env:
         return 1.0 - tracking_error  # Plus l'erreur est faible, plus la récompense est grande
 
     def _reward_upright_orientation(self):
-        # Orientation cible = alignée avec la verticale
-        upright = torch.square(1.0 - self.projected_gravity[:, 2])
-        return upright  # pénalité si la gravité projetée s’éloigne de Z+
+        upright_error = torch.square(1.0 - self.projected_gravity[:, 2])
+        return torch.exp(-upriight_error / 0.01)  # forme récompense douce
 
 
     def _reward_dof_vel(self):
