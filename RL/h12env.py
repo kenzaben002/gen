@@ -335,26 +335,6 @@ class H1_2Env:
         # Pénalise les changements brusques d'action
         return torch.sum(torch.square(self.actions - self.last_actions), dim=1)
 
-    def _reward_contact(self):
-        # Encourage les contacts au bon moment (phase stance)
-        res = torch.zeros(self.num_envs, dtype=torch.float, device=self.device)
-        for i in range(self.feet_num):
-            #is_stance = self.leg_phase[:, i] < 0.55
-            contact = self.contact_forces[:, self.feet_indices[i], 2] > 1
-            res += ~(contact ^ is_stance)
-        return res
-
-    def _reward_feet_clearance(self):
-        # Encourage une élévation correcte du pied en phase de swing
-        contact = torch.norm(self.contact_forces[:, self.feet_indices, :3], dim=2) > 1.
-        pos_error = torch.square(self.feet_pos[:, :, 2] - 0.08) * ~contact
-        return torch.sum(pos_error, dim=1)
-
-    def _reward_contact_no_vel(self):
-        # Pénalise les pieds qui touchent sans se déplacer (collisions passives)
-        contact = torch.norm(self.contact_forces[:, self.feet_indices, :3], dim=2) > 1.
-        contact_feet_vel = self.feet_vel * contact.unsqueeze(-1)
-        penalize = torch.square(contact_feet_vel[:, :, :3])
-        return torch.sum(penalize, dim=(1,2))
+   
 
 
