@@ -335,7 +335,7 @@ class H1_2Env:
         # Pénalise les changements brusques d'action
         return torch.sum(torch.square(self.actions - self.last_actions), dim=1)
         
-     def _reward_hip_pos(self):
+    def _reward_hip_pos(self):
         return torch.sum(torch.square(self.dof_pos[:,[0,2,6,8]]), dim=1)
     
      
