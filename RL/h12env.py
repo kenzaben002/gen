@@ -318,7 +318,7 @@ class H1_2Env:
 
     def _reward_upright_orientation(self):
         upright_error = torch.square(1.0 - self.projected_gravity[:, 2])
-        return torch.exp(-upriight_error / 0.01)  # forme récompense douce
+        return torch.exp(-upright_error / 0.01)  # forme récompense douce
 
 
     def _reward_dof_vel(self):
