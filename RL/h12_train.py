@@ -125,19 +125,19 @@ def get_cfgs():
         ],
         # PD
         "joint_kps":{
-        	'left_hip_yaw_joint': 150.,
-        	'left_hip_roll_joint': 150.,
-        	'left_hip_pitch_joint': 150.,
-        	'left_knee_joint': 200.,
-        	'left_ankle_pitch_joint': 40.,
-        	'left_ankle_roll_joint': 40.,
+        	'left_hip_yaw_joint': 50,
+        	'left_hip_roll_joint': 50.,
+        	'left_hip_pitch_joint': 50.,
+        	'left_knee_joint': 20,
+        	'left_ankle_pitch_joint': 10.,
+        	'left_ankle_roll_joint': 10.,
 
-        	'right_hip_yaw_joint': 150.,
-        	'right_hip_roll_joint': 150.,
-        	'right_hip_pitch_joint': 150.,
-        	'right_knee_joint': 200.,
-        	'right_ankle_pitch_joint': 40.,
-        	'right_ankle_roll_joint': 40.,
+        	'right_hip_yaw_joint': 50.,
+        	'right_hip_roll_joint': 50.,
+        	'right_hip_pitch_joint': 50.,
+        	'right_knee_joint': 20,
+        	'right_ankle_pitch_joint': 10.,
+        	'right_ankle_roll_joint': 10.,
 
        		'torso_joint': 100.,
 
@@ -179,14 +179,14 @@ def get_cfgs():
         	'right_elbow_joint': 3.0,
    		 },
         # termination
-        "termination_if_roll_greater_than": 10,  # degree
-        "termination_if_pitch_greater_than": 10,
+        "termination_if_roll_greater_than": 30,  # degree
+        "termination_if_pitch_greater_than": 30,
         # base pose
-        "base_init_pos": [0.0, 0.0, 1.04],
+        "base_init_pos": [0.0, 0.0, 1.03],
         "base_init_quat": [1.0, 0.0, 0.0, 0.0],
         "episode_length_s": 20.0,
         "resampling_time_s": 4.0,
-        "action_scale": 0.5,
+        "action_scale": 0.2,
         "simulate_action_latency": True,
         "clip_actions": 100.0,
     }
@@ -204,21 +204,21 @@ def get_cfgs():
         "base_height_target": 1.04,
         "feet_height_target": 0.0,
         "reward_scales": {
-            "tracking_lin_vel": 0.0,
-            "tracking_ang_vel": 0.0,
-            "lin_vel_z": -0.0,
-            "base_height": -0.0,
-            "action_rate": -0.0,
+            "tracking_lin_vel": 2.0,
+            "tracking_ang_vel": 0.5,
+            "lin_vel_z": -1.0,
+            "base_height": -2.0,
+            "action_rate": -0.01,
             "similar_to_default": -0.0,
-	    "forward_progress": 0.0,
+	    "forward_progress": 1.0,
             "alive": 0.0,
-            "energy_penalty": 0.0,
+            "energy_penalty": -0.0001,
 	    "no_jump": 0.0,
             "stable_height": 0.0,
             #"forward_walk": 2.0,
 	    "tracking_velocity": 0.0,
-	    "upright_orientation": 0.0,
-	    "dof_vel":-0.0,
+	    "upright_orientation": 1.0,
+	    "dof_vel":-0.0001,
 	    "dof_acc":-0.0,
  	    "action_smoothness":0.0,
 	    
@@ -228,9 +228,9 @@ def get_cfgs():
     }
     command_cfg = {
         "num_commands": 3,
-        "lin_vel_x_range": [0.3, 0.5],
-        "lin_vel_y_range": [-0.1, 0.1],
-        "ang_vel_range": [-0.2, 0.2],
+        "lin_vel_x_range": [0.2, 0.3],
+        "lin_vel_y_range": [-0.0, 0.0],
+        "ang_vel_range": [0.0 ,0.0],
     }
 
     return env_cfg, obs_cfg, reward_cfg, command_cfg
