@@ -204,8 +204,8 @@ def get_cfgs():
         "base_height_target": 1.04,
         "feet_height_target": 0.0,
         "reward_scales": {
-            "tracking_lin_vel": 1.0,
-            "tracking_ang_vel": 0.5,
+            "tracking_lin_vel": 0.0,
+            "tracking_ang_vel": 0.0,
             "lin_vel_z": -1.0,
             "base_height": -0.0,
             "action_rate": -0.0,
@@ -213,13 +213,13 @@ def get_cfgs():
 	    "forward_progress": 0.0,
             "alive": 0.1,
             "energy_penalty": 0.0,
-	    "no_jump": 0.01,
+	    "no_jump": 0.0,
             "stable_height": 0.0,
             #"forward_walk": 2.0,
 	    "tracking_velocity": 0.0,
 	    "upright_orientation": 0.0,
 	    "dof_vel":-0.0,
-	    "dof_acc":-1e-6,
+	    "dof_acc":-0.0,
  	    "action_smoothness":0.0,
 	    
 
