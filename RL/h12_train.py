@@ -201,7 +201,7 @@ def get_cfgs():
     }
     reward_cfg = {
         "tracking_sigma": 0.25,
-        "base_height_target": 1.08,
+        "base_height_target": 1.04,
         "feet_height_target": 0.0,
         "reward_scales": {
             "tracking_lin_vel": 1.0,
