@@ -183,7 +183,7 @@ def get_cfgs():
         "termination_if_pitch_greater_than": 10,
         # base pose
         "base_init_pos": [0.0, 0.0, 1.04],
-        "base_init_quat": [1.0, 0.0, 0.0, 0.0],
+        "base_init_quat": [0.0, 0.0, 1.0, 0.0],
         "episode_length_s": 20.0,
         "resampling_time_s": 4.0,
         "action_scale": 0.2,
@@ -193,7 +193,7 @@ def get_cfgs():
     obs_cfg = {
         "num_obs": 72,
         "obs_scales": {
-            "lin_vel": 1.0,
+            "lin_vel": 0.01,
             "ang_vel": -0.05,
             "dof_pos": 1.0,
             "dof_vel": -1e-3,
@@ -206,7 +206,7 @@ def get_cfgs():
         "reward_scales": {
             "tracking_lin_vel": 1.0,
             "tracking_ang_vel": 0.5,
-            "lin_vel_z": 1.0,
+            "lin_vel_z": 3.0,
             "base_height": -1.0,
             "action_rate": -0.01,
             "similar_to_default": -0.0,
@@ -228,7 +228,7 @@ def get_cfgs():
     }
     command_cfg = {
         "num_commands": 3,
-        "lin_vel_x_range": [0.0, 0.0],
+        "lin_vel_x_range": [0.2, 0.6],
         "lin_vel_y_range": [-0.0, 0.0],
         "ang_vel_range": [0.2 ,0.3],
     }
