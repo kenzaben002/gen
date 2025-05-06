@@ -73,6 +73,8 @@ class H1_2Env:
 
         # names to indices
         self.motors_dof_idx = [self.robot.get_joint(name).dof_start for name in self.env_cfg["joint_names"]]
+        for i, dof in enumerate(self.robot.dof_names):
+            print(f"{i}: {dof}")
 
         # PD control parameters
         print("Setting PD control parameters...")
