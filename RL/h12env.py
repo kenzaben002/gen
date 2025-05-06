@@ -273,9 +273,9 @@ class H1_2Env:
         # Penalize z axis base linear velocity
         return torch.square(self.base_lin_vel[:, 2])
 
-    def _reward_forward_walk(self):
-        forward_vel = self.base_lin_vel[:, 0]  # vitesse en x
-        return forward_vel  # ou `torch.clamp(forward_vel, min=0.0)`
+    #def _reward_forward_walk(self):
+     #   forward_vel = self.base_lin_vel[:, 0]  # vitesse en x
+     #   return forward_vel  # ou `torch.clamp(forward_vel, min=0.0)`
 
 
     def _reward_action_rate(self):
@@ -312,6 +312,7 @@ class H1_2Env:
         target_height = 1.04  # à ajuster selon ton robot
         height_error = torch.abs(self.base_pos[:, 2] - target_height)
         return torch.exp(-height_error**2 / 0.01)
+        
     def _reward_tracking_velocity(self):
         # Récompense pour suivre la commande en XY (ignorer Z)
         tracking_error = torch.sum(torch.square(self.base_lin_vel[:, :2] - self.commands[:, :2]), dim=1)
