@@ -211,7 +211,7 @@ def get_cfgs():
             "action_rate": -0.01,
             "similar_to_default": -0.0,
 	    "forward_progress": 1.0,
-            "alive": 0.0,
+            "alive": 1.0,
             "energy_penalty": -0.0001,
 	    "no_jump": 10.0,
             "stable_height": 0.0,
