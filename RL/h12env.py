@@ -322,7 +322,7 @@ class H1_2Env:
     def _reward_upright_orientation(self):
         # Orientation cible = alignée avec la verticale
         upright = torch.square(1.0 - self.projected_gravity[:, 2])
-        return -upright  # pénalité si la gravité projetée s’éloigne de Z+
+        return upright  # pénalité si la gravité projetée s’éloigne de Z+
 
 
     def _reward_dof_vel(self):
