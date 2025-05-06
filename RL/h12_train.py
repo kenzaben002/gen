@@ -221,7 +221,7 @@ def get_cfgs():
 	    "dof_vel":-0.0001,
 	    "dof_acc":-0.0,
  	    "action_smoothness":0.0,
-	    "hip_pos" :-1.0,
+	    #"hip_pos" :-1.0,
 
 	    
         },
