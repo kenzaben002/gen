@@ -221,9 +221,7 @@ def get_cfgs():
 	    "dof_vel":-0.001,
 	    "dof_acc":-1e-6,
  	    "action_smoothness":-0.01,
-	    "contact":0.2,
-	    "feet_clearance":-10.0,
-	    "contact_no_vel":-0.1,
+	    
 
 	    
         },
