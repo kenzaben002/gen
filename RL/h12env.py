@@ -159,7 +159,7 @@ class H1_2Env:
         self.projected_gravity = transform_by_quat(self.global_gravity, inv_base_quat)
         self.dof_pos[:] = self.robot.get_dofs_position(self.motors_dof_idx)
         self.dof_vel[:] = self.robot.get_dofs_velocity(self.motors_dof_idx)
-        #### ajout 
+        
       
         # resample commands / changement des cmd pour certains env
         envs_idx = (
@@ -204,7 +204,8 @@ class H1_2Env:
         self.last_dof_vel[:] = self.dof_vel[:]
 
         self.extras["observations"]["critic"] = self.obs_buf
-
+        print(f"Base height: {self.base_pos[:,2].mean().item():.2f}")
+        print(f"Velocity: {self.base_lin_vel[:,0].mean().item():.2f}")
         return self.obs_buf, self.rew_buf, self.reset_buf, self.extras
 
     def get_observations(self):
