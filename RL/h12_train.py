@@ -183,7 +183,7 @@ def get_cfgs():
         "termination_if_pitch_greater_than": 10,
         # base pose
         "base_init_pos": [0.0, 0.0, 1.04],
-        "base_init_quat": [0.0, 0.0, 1.0, 0.0],
+        "base_init_quat": [1.0, 0.0, 0.0, 0.0],
         "episode_length_s": 20.0,
         "resampling_time_s": 4.0,
         "action_scale": 0.2,
@@ -193,7 +193,7 @@ def get_cfgs():
     obs_cfg = {
         "num_obs": 72,
         "obs_scales": {
-            "lin_vel": 0.01,
+            "lin_vel": 1.0,
             "ang_vel": -0.05,
             "dof_pos": 1.0,
             "dof_vel": -1e-3,
@@ -221,7 +221,7 @@ def get_cfgs():
 	    "dof_vel":-0.0001,
 	    "dof_acc":-0.0,
  	    "action_smoothness":0.0,
-	    #"hip_pos" :-1.0,
+	    "hip_pos" :-1.0,
 
 	    
         },
