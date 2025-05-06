@@ -179,10 +179,10 @@ def get_cfgs():
         	'right_elbow_joint': 3.0,
    		 },
         # termination
-        "termination_if_roll_greater_than": 30,  # degree
-        "termination_if_pitch_greater_than": 30,
+        "termination_if_roll_greater_than": 10,  # degree
+        "termination_if_pitch_greater_than": 10,
         # base pose
-        "base_init_pos": [0.0, 0.0, 1.004],
+        "base_init_pos": [0.0, 0.0, 1.04],
         "base_init_quat": [1.0, 0.0, 0.0, 0.0],
         "episode_length_s": 20.0,
         "resampling_time_s": 4.0,
@@ -201,19 +201,19 @@ def get_cfgs():
     }
     reward_cfg = {
         "tracking_sigma": 0.25,
-        "base_height_target": 1.004,
+        "base_height_target": 1.04,
         "feet_height_target": 0.0,
         "reward_scales": {
             "tracking_lin_vel": 2.0,
             "tracking_ang_vel": 0.5,
             "lin_vel_z": -1.0,
-            "base_height": -2.0,
+            "base_height": -20.0,
             "action_rate": -0.01,
             "similar_to_default": -0.0,
 	    "forward_progress": 1.0,
             "alive": 0.0,
             "energy_penalty": -0.0001,
-	    "no_jump": 0.0,
+	    "no_jump": 10.0,
             "stable_height": 0.0,
             #"forward_walk": 2.0,
 	    "tracking_velocity": 0.0,
