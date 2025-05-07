@@ -19,7 +19,7 @@ class H1_2Env:
         self.device = gs.device
 
         self.simulate_action_latency = True  
-        self.dt = 0.04 # control frequency on real robot 
+        self.dt = 0.002# control frequency on real robot 
         self.max_episode_length = math.ceil(env_cfg["episode_length_s"] / self.dt)
 
         self.env_cfg = env_cfg
