@@ -75,13 +75,13 @@ def get_cfgs():
             'left_hip_yaw_joint': 0,
             'left_hip_roll_joint': 0,
             'left_hip_pitch_joint': -0.16,
-            'left_knee_joint': 0.4,
+            'left_knee_joint': 0.36,
             'left_ankle_pitch_joint': -0.2,
             'left_ankle_roll_joint': 0.0,
             'right_hip_yaw_joint': 0,
             'right_hip_roll_joint': 0,
             'right_hip_pitch_joint': -0.16,
-            'right_knee_joint': 0.4,
+            'right_knee_joint': 0.36,
             'right_ankle_pitch_joint': -0.2,
             'right_ankle_roll_joint': 0.0,
             'torso_joint': 0,
@@ -229,9 +229,9 @@ def get_cfgs():
     }
     command_cfg = {
         "num_commands": 3,
-        "lin_vel_x_range": [0.5, 0.5],
-        "lin_vel_y_range": [-0.0, 0.0],
-        "ang_vel_range": [0.0 ,0.0],
+        "lin_vel_x_range": [0.8, 0.8],
+        "lin_vel_y_range": [0.5, 0.5],
+        "ang_vel_range": [1.57,1.57],
     }
 
     return env_cfg, obs_cfg, reward_cfg, command_cfg
