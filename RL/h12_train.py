@@ -189,6 +189,8 @@ def get_cfgs():
         "action_scale": 0.2,
         "simulate_action_latency": True,
         "clip_actions": 100.0,
+	"simulation_dt":0.002,
+	"control_dt":0.02,
     }
     obs_cfg = {
 	   #3+3+3+21+21+21 
