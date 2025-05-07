@@ -72,14 +72,14 @@ def get_cfgs():
         "num_actions": 21,
         # joint/link names / tt changement done une erreur de log
         "default_joint_angles": {  # [rad]
-            'left_hip_yaw_joint': 0.1,
-            'left_hip_roll_joint': 0.1,
+            'left_hip_yaw_joint': 0.0,
+            'left_hip_roll_joint': 0.0,
             'left_hip_pitch_joint': -0.16,
             'left_knee_joint': 0.36,
             'left_ankle_pitch_joint': -0.2,
-            'left_ankle_roll_joint': 0.1,
-            'right_hip_yaw_joint': 0.1,
-            'right_hip_roll_joint': 0.1,
+            'left_ankle_roll_joint': 0.0,
+            'right_hip_yaw_joint': 0.0,
+            'right_hip_roll_joint': 0.0,
             'right_hip_pitch_joint': -0.16,
             'right_knee_joint': 0.36,
             'right_ankle_pitch_joint': -0.2,
@@ -125,19 +125,19 @@ def get_cfgs():
         ],
         # PD
         "joint_kps":{
-        	'left_hip_yaw_joint': 50,
-        	'left_hip_roll_joint': 50.,
-        	'left_hip_pitch_joint': 50.,
-        	'left_knee_joint': 20,
-        	'left_ankle_pitch_joint': 10.,
-        	'left_ankle_roll_joint': 10.,
+        	'left_hip_yaw_joint': 200,
+        	'left_hip_roll_joint': 200.,
+        	'left_hip_pitch_joint': 200.,
+        	'left_knee_joint': 300,
+        	'left_ankle_pitch_joint': 40.,
+        	'left_ankle_roll_joint': 40.,
 
-        	'right_hip_yaw_joint': 50.,
-        	'right_hip_roll_joint': 50.,
-        	'right_hip_pitch_joint': 50.,
-        	'right_knee_joint': 20,
-        	'right_ankle_pitch_joint': 10.,
-        	'right_ankle_roll_joint': 10.,
+        	'right_hip_yaw_joint': 200.,
+        	'right_hip_roll_joint': 200.,
+        	'right_hip_pitch_joint': 200.,
+        	'right_knee_joint': 300,
+        	'right_ankle_pitch_joint': 40.,
+        	'right_ankle_roll_joint': 40.,
 
        		'torso_joint': 100.,
 
@@ -182,7 +182,7 @@ def get_cfgs():
         "termination_if_roll_greater_than": 20,  # degree
         "termination_if_pitch_greater_than": 20,
         # base pose
-        "base_init_pos": [0.3, 0.1, 1.05],
+        "base_init_pos": [0.0, 0.0, 1.05],
         "base_init_quat": [1.0, 0.0, 0.0, 0.0],
         "episode_length_s": 20.0,
         "resampling_time_s": 4.0,
