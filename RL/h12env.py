@@ -38,7 +38,7 @@ class H1_2Env:
     
         # creation dù scene
         self.scene = gs.Scene(
-            sim_options=gs.options.SimOptions(dt=self.simulation_dt, substeps=2),
+            sim_options=gs.options.SimOptions(dt=self.dt, substeps=2),
             viewer_options=gs.options.ViewerOptions(
                 max_FPS=int(0.5 / self.dt),
                 camera_pos=(2.0, 0.0, 2.5),
