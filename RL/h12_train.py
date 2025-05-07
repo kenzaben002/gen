@@ -182,7 +182,7 @@ def get_cfgs():
         "termination_if_roll_greater_than": 10,  # degree
         "termination_if_pitch_greater_than": 10,
         # base pose
-        "base_init_pos": [0.0, 0.0, 1.16],
+        "base_init_pos": [0.0, 0.0, 1.05],
         "base_init_quat": [1.0, 0.0, 0.0, 0.0],
         "episode_length_s": 20.0,
         "resampling_time_s": 4.0,
@@ -191,7 +191,7 @@ def get_cfgs():
         "clip_actions": 100.0,
     }
     obs_cfg = {
-        "num_obs": 72,
+        "num_obs": 36,
         "obs_scales": {
             "lin_vel": 1.0,
             "ang_vel": 0.25,
@@ -201,7 +201,7 @@ def get_cfgs():
     }
     reward_cfg = {
         "tracking_sigma": 0.25,
-        "base_height_target": 1.03,
+        "base_height_target": 1.0,
         "feet_height_target": 0.075,
         "reward_scales": {
             "tracking_lin_vel": 1.0,
