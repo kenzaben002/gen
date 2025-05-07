@@ -32,10 +32,13 @@ class H1_2Env:
         #ajout de links des pieds 
         self.feet_names = ["left_ankle_roll_link", "right_ankle_roll_link"]
         self.feet_num = len(self.feet_names)
-
+        self.simulation_dt=env_cfg["simulation_dt"]
+        self.control_dt=env_cfg["control_dt"]
+        self.control_decimation=int(self.control_dt/self.simulation_dt)
+    
         # creation dù scene
         self.scene = gs.Scene(
-            sim_options=gs.options.SimOptions(dt=self.dt, substeps=2),
+            sim_options=gs.options.SimOptions(dt=self.simulation_dt, substeps=2),
             viewer_options=gs.options.ViewerOptions(
                 max_FPS=int(0.5 / self.dt),
                 camera_pos=(2.0, 0.0, 2.5),
@@ -143,7 +146,8 @@ class H1_2Env:
         exec_actions = self.last_actions if self.simulate_action_latency else self.actions# execution des action selon un delai
         target_dof_pos = exec_actions * self.env_cfg["action_scale"] + self.default_dof_pos #determine la pos cible et applique la au robotbv 
         self.robot.control_dofs_position(target_dof_pos, self.motors_dof_idx)
-        self.scene.step()
+        for _ in range(self.control_decimation)
+            self.scene.step()
 
         # update buffers
         self.episode_length_buf += 1
