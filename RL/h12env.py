@@ -146,8 +146,7 @@ class H1_2Env:
         exec_actions = self.last_actions if self.simulate_action_latency else self.actions# execution des action selon un delai
         target_dof_pos = exec_actions * self.env_cfg["action_scale"] + self.default_dof_pos #determine la pos cible et applique la au robotbv 
         self.robot.control_dofs_position(target_dof_pos, self.motors_dof_idx)
-        for _ in range(self.control_decimation):
-            self.scene.step()
+        self.scene.step()
 
         # update buffers
         self.episode_length_buf += 1
