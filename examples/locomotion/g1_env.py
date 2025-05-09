@@ -231,7 +231,11 @@ class G1Env:
         self.leg_phase = torch.cat([self.phase_left.unsqueeze(1), self.phase_right.unsqueeze(1)], dim=-1)
         self.sin_phase = torch.sin(2 * np.pi * self.phase ).unsqueeze(1)
         self.cos_phase = torch.cos(2 * np.pi * self.phase ).unsqueeze(1)
-
+        self.extras = {
+        "observations": {
+            "critic": None  # Initialisé avec None, sera mis à jour dans step()
+        },
+        "episode": {}  # Pour les métriques d'épisode }
         # compute reward
         self.rew_buf[:] = 0.0
         for name, reward_func in self.reward_functions.items():
@@ -308,8 +312,11 @@ class G1Env:
         self.robot.set_quat(new_quat, zero_velocity=False, envs_idx=push_env_ids)
 
     def get_observations(self):
-        extras={}
-        return self.obs_buf , self.extras 
+        extras = {
+        "observations": {
+            "critic": self.obs_buf  # Ajoutez ceci pour fournir les observations du critique
+        }}
+        return self.obs_buf , extras 
 
     def get_privileged_observations(self):
         return None
