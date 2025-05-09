@@ -308,9 +308,7 @@ class G1Env:
         self.robot.set_quat(new_quat, zero_velocity=False, envs_idx=push_env_ids)
 
     def get_observations(self):
-        obs=self.obs_buf
-        self.extras["observations"]["critic"] = self.obs_buf
-        return self.obs_buf,self.extras 
+        return self.obs_buf 
 
     def get_privileged_observations(self):
         return None
