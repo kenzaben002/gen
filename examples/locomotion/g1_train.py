@@ -53,7 +53,7 @@ def get_train_cfg(exp_name, max_iterations):
         "runner_class_name": "OnPolicyRunner",
         "num_steps_per_env": 24,
         "save_interval": 1000,
-        "emppirical_normalization":None ,
+        "empirical_normalization":None ,
         "seed": 1,
     }
 
