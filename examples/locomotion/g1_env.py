@@ -113,7 +113,7 @@ class G1Env:
             dtype=gs.tc_float,
         )
         self.extras = dict()  # extra information for logging
-
+        
         # Modified Physics
         self.contact_forces = self.robot.get_links_net_contact_force()
         self.left_foot_link = self.robot.get_link(name='left_ankle_roll_link')
@@ -308,7 +308,7 @@ class G1Env:
         self.robot.set_quat(new_quat, zero_velocity=False, envs_idx=push_env_ids)
 
     def get_observations(self):
-        return self.obs_buf
+        return self.obs_buf,self.extras 
 
     def get_privileged_observations(self):
         return None
