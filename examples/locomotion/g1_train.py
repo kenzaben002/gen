@@ -51,6 +51,7 @@ def get_train_cfg(exp_name, max_iterations):
             "save_interval": 1000,
         },
         "runner_class_name": "OnPolicyRunner",
+        "num_steps_per_env": 24,
         "seed": 1,
     }
 
