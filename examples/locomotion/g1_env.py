@@ -235,7 +235,8 @@ class G1Env:
         "observations": {
             "critic": None  # Initialisé avec None, sera mis à jour dans step()
         },
-        "episode": {}  # Pour les métriques d'épisode }
+        "episode": {}  # Pour les métriques d'épisode 
+        }
         # compute reward
         self.rew_buf[:] = 0.0
         for name, reward_func in self.reward_functions.items():
@@ -263,7 +264,7 @@ class G1Env:
         self.last_dof_vel[:] = self.dof_vel[:]
 
         self.counter += 1
-
+        self.extras["observations"]["critic"] = self.obs_buf
         return self.obs_buf, None, self.rew_buf, self.reset_buf, self.extras
     
     def randomize_friction(self):
