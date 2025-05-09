@@ -12,7 +12,7 @@ import genesis as gs
 def get_train_cfg(exp_name, max_iterations):
     train_cfg_dict = {
         "algorithm": {
-            "class_name":"PPO",
+            "class_name":"ActorCritic",
             "clip_param": 0.2,
             "desired_kl": 0.01,
             "entropy_coef": 0.01,
