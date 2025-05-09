@@ -12,7 +12,7 @@ import genesis as gs
 def get_train_cfg(exp_name, max_iterations):
     train_cfg_dict = {
         "algorithm": {
-            "class_name":"ActorCritic",
+            "class_name":"PPO",
             "clip_param": 0.2,
             "desired_kl": 0.01,
             "entropy_coef": 0.01,
@@ -32,6 +32,7 @@ def get_train_cfg(exp_name, max_iterations):
             "actor_hidden_dims": [512, 256, 128],
             "critic_hidden_dims": [512, 256, 128],
             "init_noise_std": 1.0,
+            "class_name":"ActorCritic"
         },
         "runner": {
             "algorithm_class_name": "PPO",
