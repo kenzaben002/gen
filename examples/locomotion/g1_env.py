@@ -59,7 +59,7 @@ class G1Env:
         self.base_init_quat = torch.tensor(self.env_cfg["base_init_quat"], device=self.device)
         self.inv_base_init_quat = inv_quat(self.base_init_quat)
         self.robot = self.scene.add_entity(
-            gs.morphs.URDF(
+            gs.morphs.MJCF(
                 file="/home/kbenhammaa/gen/RL/h1_2_handless.xml",
                 pos=self.base_init_pos.cpu().numpy(),
                 quat=self.base_init_quat.cpu().numpy(),
