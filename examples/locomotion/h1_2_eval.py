@@ -11,7 +11,7 @@ import genesis as gs
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("-e", "--exp_name", type=str, default="g1-walking")
+    parser.add_argument("-e", "--exp_name", type=str, default="h1_2-walking")
     parser.add_argument("--ckpt", type=int, default=100)
     args = parser.parse_args()
 
