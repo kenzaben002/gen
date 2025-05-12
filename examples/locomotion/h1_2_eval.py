@@ -3,7 +3,7 @@ import os
 import pickle
 
 import torch
-from h1_2_env import h1_2_nenv
+from h1_2_nenv import H1_2_Env
 from rsl_rl.runners import OnPolicyRunner
 
 import genesis as gs
