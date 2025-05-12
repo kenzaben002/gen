@@ -23,7 +23,7 @@ def main():
     train_cfg["algorithm"]["class_name"]="PPO"
     reward_cfg["reward_scales"] = {}
 
-    env = G1Env(
+    env = H1_2_Env(
         num_envs=1,
         env_cfg=env_cfg,
         obs_cfg=obs_cfg,
