@@ -99,7 +99,7 @@ def get_cfgs():
         "terminate_after_contacts_on": ["pelvis"],
         "termination_if_pelvis_z_less_than": 0.2,
         # base pose
-        "base_init_pos": [0.0, 0.0, 0.8],
+        "base_init_pos": [0.0, 0.0, 1.05],
         "base_init_quat": [1.0, 0.0, 0.0, 0.0],
         "episode_length_s": 20.0,
         "resampling_time_s": 4.0,
@@ -119,7 +119,7 @@ def get_cfgs():
     }
     reward_cfg = {
         "tracking_sigma": 0.25,
-        "base_height_target": 0.78,
+        "base_height_target": 1.00,
         "feet_height_target": 0.075,
         "reward_scales": {
             "tracking_lin_vel": 1.0,
