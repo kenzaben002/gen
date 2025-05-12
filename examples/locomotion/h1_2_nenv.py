@@ -8,7 +8,7 @@ import random
 def gs_rand_float(lower, upper, shape, device):
     return (upper - lower) * torch.rand(size=shape, device=device) + lower
 
-class G1Env:
+class H1_2_Env:
     def __init__(self, num_envs, env_cfg, obs_cfg, reward_cfg, command_cfg, domain_rand_cfg, show_viewer=False, device="cuda"):
         self.device = torch.device(device)
 
