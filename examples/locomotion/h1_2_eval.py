@@ -50,5 +50,5 @@ if __name__ == "__main__":
 
 """
 # evaluation
-python examples/locomotion/g1_eval.py -e g1-walking --ckpt 100
+python examples/locomotion/h1_2_eval.py -e h1_2-walking --ckpt 100
 """
