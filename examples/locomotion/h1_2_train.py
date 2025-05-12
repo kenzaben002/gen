@@ -175,7 +175,7 @@ def main():
         shutil.rmtree(log_dir)
     os.makedirs(log_dir, exist_ok=True)
 
-    env = G1Env(
+    env = H1_2_Env(
         num_envs=args.num_envs, env_cfg=env_cfg, obs_cfg=obs_cfg,
         reward_cfg=reward_cfg, command_cfg=command_cfg,
         domain_rand_cfg=domain_rand_cfg
