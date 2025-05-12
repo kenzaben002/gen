@@ -265,8 +265,6 @@ class G1Env:
 
         self.counter += 1
         self.extras["observations"]["critic"] = self.obs_buf
-        print(f"base height:{self.base_pos[:,2].mean.item():.2f}")
-        print(f"velocity:{self.lin_vel[:,2].mean.item():.2f}")
         return self.obs_buf, self.rew_buf, self.reset_buf, self.extras
     
     def randomize_friction(self):
