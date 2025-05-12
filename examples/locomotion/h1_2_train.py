@@ -160,7 +160,7 @@ def get_cfgs():
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("-e", "--exp_name", type=str, default="g1-walking")
+    parser.add_argument("-e", "--exp_name", type=str, default="h1_2-walking")
     parser.add_argument("-B", "--num_envs", type=int, default=4096)
     parser.add_argument("--max_iterations", type=int, default=101)
     args = parser.parse_args()
@@ -196,5 +196,5 @@ if __name__ == "__main__":
 
 """
 # training
-python examples/locomotion/g1_train.py
+python examples/locomotion/h1_2_train.py
 """
