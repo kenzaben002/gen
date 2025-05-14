@@ -42,4 +42,6 @@ Lors de l’entraînement d’une politique de marche sur le Unitree Go2, Genesi
 une incoherence physyque lors de l'utilisation d'un plan urdf et fichier robot mjcf (xml) a cause de quelque decalage physique et d'uniter ce qui a induit le robot a sauter sur place negligant totalement les loi physique 
 
 #changement du fichier en urdf 
-1)le rl fonctionne pour le robot pour un entrainnement de 4096 env et 101 iteration dans 450.22 s en tmps total 
+1)le rl fonctionne pour le robot pour un entrainnement de 4096 env et 101 iteration dans 450.22~489.02S s en tmps total 
+      512 env  101 it   365.23s  pas assez d'entrainement 
+              
