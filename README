@@ -24,7 +24,8 @@ Vérifiez aussi l’architecture de votre GPU :
 - Elle doit avoir un Compute Capability  (C.C) supérieur ou égal à 3.7
 - Certaines architectures ne sont plus supportées par PyTorch
   Exemple : la NVIDIA GeForce GTX 780 a un C.C de 3.5 et n’est donc **non compatible**
-
+##bib to add 
+installer open3d "pip install open3d" pour utiliser les different morphs 
 #######Environnement de mon système
  **Python** : 3.12.3  
  **OS** : Ubuntu 24.04.2 LTS   
