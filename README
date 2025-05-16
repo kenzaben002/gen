@@ -45,4 +45,8 @@ une incoherence physyque lors de l'utilisation d'un plan urdf et fichier robot m
 #changement du fichier en urdf 
 1)le rl fonctionne pour le robot pour un entrainnement de 4096 env et 101 iteration dans 450.22~489.02S s en tmps total 
       512 env  101 it   365.23s  pas assez d'entrainement 
+
+2) adding some domain randomazation with 4096 env et 101 iteration  a 24923 steps  dans 426.99 seconde   --> resultat= comportement instable 
+ test avec plus d'iteration 
               
+  test with 1001 iteration same resultat    -> 4447,68 s   comprotement instable et absurde 
