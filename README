@@ -52,4 +52,6 @@ une incoherence physyque lors de l'utilisation d'un plan urdf et fichier robot m
   test with 1001 iteration same resultat    -> 4447,68 s   comprotement instable et absurde 
 3) ajout des recompense et contrainte de marche de chez leggedgym pour un entrainement de500 with a tottal time of 2403.63 secondes ---> resultat= assez bien un emarche plus coherente mais instabiliter 
   je reentraine pour 100 iteration meme nbr d'env   temps total 537 from scratch   //   resultat --> not learning enaugh 
-  entrainement avec 300 iteration meme nbr d'env  temps total de 1616,12 s resultat --> pas assez stable relancer un entrainement avec 100 it avec des modification de valeure de rewards 
+  entrainement avec 300 iteration meme nbr d'env  temps total de 1616,12 s resultat --> pas assez stable relancer un entrainement avec 100 it avec des modification de valeure de rewards tps = 443 s
+   resultat ---> marche tres difficile 
+   entrainement 500 it  1998 secondes -->  
