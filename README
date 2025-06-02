@@ -55,3 +55,14 @@ une incoherence physyque lors de l'utilisation d'un plan urdf et fichier robot m
   entrainement avec 300 iteration meme nbr d'env  temps total de 1616,12 s resultat --> pas assez stable relancer un entrainement avec 100 it avec des modification de valeure de rewards tps = 443 s
    resultat ---> marche tres difficile 
    entrainement 500 it  1998 secondes -->  
+
+
+
+4) HYPERPARAMETRE 
+    une comparaison entre les hyperparametre du go2 sur isaacgym  vs genesis 
+        cmd diff val
+        policy same 
+        reward :  pas les meme utiliser ni les memes valeur
+        nbr d'iteration pas le meme tres sup * 15 
+        
+        
